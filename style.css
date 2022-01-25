@@ -75,3 +75,37 @@ body {
     width: auto;
     height: auto;
 }
+
+@media only screen and (min-width: 1000px) {
+    
+    .main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .svg-picture {
+        height: 80vh;
+        width: 80vh;
+        cursor: pointer;
+    }
+
+    .menu {
+        position: relative;
+        transition: none;
+        width: 30vw;
+        cursor: pointer;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .menu__icon {
+        display: none;
+    }
+
+    .menu__colors {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

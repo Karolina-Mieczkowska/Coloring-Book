@@ -6,8 +6,6 @@ const selectedClrTile = document.querySelector('.selected__clr');
 
 // console.log(menuColors.clientHeight);
 
-menu.style.transform = `translateY(${menuColors.clientHeight}px)`;
-
 // const activateMenu = function() {
 
 //     menu.style.transform = !menuIcon.classList.contains('menu__icon--active') ? 'translateY(0)' : `translateY(${menuColors.clientHeight}px)`;
@@ -18,52 +16,59 @@ menu.style.transform = `translateY(${menuColors.clientHeight}px)`;
 
 // SLIDE UP MENU
 
-const touchStart = function() {
-    return function(ev) {
-        isDragging = true;
-        startPosition = ev.touches[0].clientY;
-    }
-};
+if (screen.width < 1000) {
+    
+    menu.style.transform = `translateY(${menuColors.clientHeight}px)`;
 
-const touchEnd = function() {
-
-    return function(ev) {
-        isDragging = false;
-        nextPosition = ev.changedTouches[0].clientY;
-
-        if (nextPosition < startPosition) {
-            menu.style.transform = 'translateY(0)';
-            menuIcon.classList.add('menu__icon--active');
-        } else {
-            menu.style.transform = `translateY(${menuColors.clientHeight}px)`;
-            menuIcon.classList.remove('menu__icon--active');
-        };
-    };
-};
-
-const touchMove = function() {
-
-    return function(ev) {
-
-        curPosition = ev.touches[0].clientY;
-
-        if (isDragging && curPosition > startPosition) {
-
-            menu.style.transform = `translateY(${startPosition++}px)`;
-        } else if (isDragging && curPosition < startPosition) {
-            menu.style.transform = `translateY(${-curPosition}px)`;
+    const touchStart = function() {
+        return function(ev) {
+            isDragging = true;
+            startPosition = ev.touches[0].clientY;
         }
     };
-};
-
-let isDragging = false,
-    startPosition,
-    curPosition,
-    nextPosition;
-
-menu.addEventListener('touchstart', touchStart());
-menu.addEventListener('touchend', touchEnd());
-menu.addEventListener('touchmove', touchMove());
+    
+    const touchEnd = function() {
+    
+        return function(ev) {
+            isDragging = false;
+            nextPosition = ev.changedTouches[0].clientY;
+    
+            if (nextPosition < startPosition) {
+                menu.style.transform = 'translateY(0)';
+                menuIcon.classList.add('menu__icon--active');
+            } else {
+                menu.style.transform = `translateY(${menuColors.clientHeight}px)`;
+                menuIcon.classList.remove('menu__icon--active');
+            };
+        };
+    };
+    
+    const touchMove = function() {
+    
+        return function(ev) {
+    
+            curPosition = ev.touches[0].clientY;
+    
+            if (isDragging && curPosition > startPosition) {
+    
+                menu.style.transform = `translateY(${startPosition++}px)`;
+            } else if (isDragging && curPosition < startPosition) {
+                menu.style.transform = `translateY(${-curPosition}px)`;
+            }
+        };
+    };
+    
+    let isDragging = false,
+        startPosition,
+        curPosition,
+        nextPosition;
+    
+    menu.addEventListener('touchstart', touchStart());
+    menu.addEventListener('touchend', touchEnd());
+    menu.addEventListener('touchmove', touchMove());
+} else {
+    menu.style.height = `${menuColors.clientHeight}px`;
+}
 
 // COLORS
 
