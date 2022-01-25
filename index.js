@@ -69,6 +69,10 @@ if (screen.width < 1000) {
 } else {
     menu.style.height = `${menuColors.clientHeight}px`;
 }
+// else {
+//     menu.style.transform = `translateY(0)`;
+//     menu.style.height = `${menuColors.clientHeight}px`;
+// }
 
 // COLORS
 

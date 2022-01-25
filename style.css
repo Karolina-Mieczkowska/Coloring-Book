@@ -16,6 +16,7 @@
 body {
     margin: 0;
     overflow-y: hidden;
+    background: #e7ebf0;
 }
 
 .selected {
@@ -25,8 +26,9 @@ body {
 .selected__clr {
     width: 3rem;
     height: 3rem;
-    border: 2px solid #444;
+    /* border: 2px solid #666; */
     border-radius: 50%;
+    background: #fff;
 }
 
 .picture {
@@ -34,17 +36,22 @@ body {
     padding-top: 3rem;
 }
 
+/*  #8c9cad  #2d363f #bcd2e7 #295b90 #4d5c6c; */
+
 .menu {
-    border: solid 2px #444;
+    /* border: solid 2px #666; */
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #fff;
+    /* background: #dae1e9; */
+    background: rgb(240, 239, 243);
     box-sizing: border-box;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    transition: transform .5s ease-in-out;
+    transition: transform .5s ease-in-out; 
+    -webkit-box-shadow: inset -2px 0 12px 5px rgba(77, 92, 108, 0.4); 
+    box-shadow: inset -2px 0 12px 5px rgba(77, 92, 108, 0.4); 
 }
 
 .menu__icon {
@@ -59,7 +66,7 @@ body {
 .menu__icon svg {
     height: 2.5rem;
     width: 2.5rem;
-    fill: #444;
+    fill: #666;
 }
 
 .menu__colors {
@@ -67,11 +74,11 @@ body {
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: .25rem;
+    grid-gap: .35rem;
 }
 
 .colors__select {
-    border: solid 2px #444;
+    /* border: solid 2px #6f7e8d; */
     width: auto;
     height: auto;
 }
@@ -82,6 +89,8 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        width: 95%;
+        margin: 0 0 0 auto;
     }
 
     .svg-picture {
@@ -95,10 +104,14 @@ body {
         transition: none;
         width: 30vw;
         cursor: pointer;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+        /* border-top-left-radius: 0;
+        border-top-right-radius: 0; */
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
+        /* height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; */
     }
 
     .menu__icon {
@@ -107,5 +120,10 @@ body {
 
     .menu__colors {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .colors__select:hover {
+        transform: scale(1.02);
+        filter: saturate(1.3);
     }
 }
