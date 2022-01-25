@@ -39,7 +39,7 @@ body {
 /*  #8c9cad  #2d363f #bcd2e7 #295b90 #4d5c6c; */
 
 .menu {
-    /* border: solid 2px #666; */
+    border: solid 2px rgba(77, 92, 108, 0.4);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -50,8 +50,6 @@ body {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     transition: transform .5s ease-in-out; 
-    -webkit-box-shadow: inset -2px 0 12px 5px rgba(77, 92, 108, 0.4); 
-    box-shadow: inset -2px 0 12px 5px rgba(77, 92, 108, 0.4); 
 }
 
 .menu__icon {
@@ -66,7 +64,8 @@ body {
 .menu__icon svg {
     height: 2.5rem;
     width: 2.5rem;
-    fill: #666;
+    fill: #4d5c6c;
+    opacity: 0.6;
 }
 
 .menu__colors {
@@ -93,6 +92,11 @@ body {
         margin: 0 0 0 auto;
     }
 
+    .selected,
+    .picture {
+        padding-top: 4vh;
+    }
+
     .svg-picture {
         height: 80vh;
         width: 80vh;
@@ -102,16 +106,25 @@ body {
     .menu {
         position: relative;
         transition: none;
-        width: 30vw;
+        width: 25vw;
         cursor: pointer;
-        /* border-top-left-radius: 0;
-        border-top-right-radius: 0; */
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0; 
+        padding: 4vh 1rem;
+        height: 100vh;
+        /* border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; */
         /* height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: flex-end; */
+        background: rgb(240, 239, 243);
+        box-sizing: border-box;
+        /* -webkit-box-shadow: inset -2px 0 12px 5px rgba(77, 92, 108, 0.4); 
+        box-shadow: inset -2px 0 12px 5px rgba(77, 92, 108, 0.4); */
+        -webkit-box-shadow: inset 8px 1px 12px -1px rgba(77, 92, 108, 0.3); 
+        box-shadow: inset 8px 1px 12px -1px rgba(77, 92, 108, 0.3); 
+        border: none;
     }
 
     .menu__icon {

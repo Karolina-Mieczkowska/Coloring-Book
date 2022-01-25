@@ -67,7 +67,7 @@ if (screen.width < 1000) {
     menu.addEventListener('touchend', touchEnd());
     menu.addEventListener('touchmove', touchMove());
 } else {
-    menu.style.height = `${menuColors.clientHeight}px`;
+    // menu.style.height = `${menuColors.clientHeight}px`;
 }
 // else {
 //     menu.style.transform = `translateY(0)`;
