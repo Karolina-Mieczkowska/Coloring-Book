@@ -4,16 +4,6 @@ const menuIcon = document.querySelector('.menu__icon');
 const menuColors = document.querySelector('.menu__colors');
 const selectedClrTile = document.querySelector('.selected__clr');
 
-// console.log(menuColors.clientHeight);
-
-// const activateMenu = function() {
-
-//     menu.style.transform = !menuIcon.classList.contains('menu__icon--active') ? 'translateY(0)' : `translateY(${menuColors.clientHeight}px)`;
-//     menuIcon.classList.toggle('menu__icon--active');
-// }
-
-// menuIcon.addEventListener('click', activateMenu);
-
 // SLIDE UP MENU
 
 if (screen.width < 1000) {
@@ -66,13 +56,7 @@ if (screen.width < 1000) {
     menu.addEventListener('touchstart', touchStart());
     menu.addEventListener('touchend', touchEnd());
     menu.addEventListener('touchmove', touchMove());
-} else {
-    // menu.style.height = `${menuColors.clientHeight}px`;
-}
-// else {
-//     menu.style.transform = `translateY(0)`;
-//     menu.style.height = `${menuColors.clientHeight}px`;
-// }
+} 
 
 // COLORS
 
